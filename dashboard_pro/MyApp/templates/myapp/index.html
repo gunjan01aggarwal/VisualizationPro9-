@@ -1,0 +1,110 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block body %}
+            <div class="container my-5">
+                <!-- Row 1 -->
+                <div class="row mb-4">
+                    <!-- Card 1 -->
+                    <div class="col-md-6">
+                        <div class="card dashboard-card p-3">
+                            <div>
+                                <canvas id="myChart" width="400" height="200"></canvas>
+                            </div>
+                            <script>
+                                const chartData1 = {
+                                                    labels1: {{ labels1|safe }},
+                                                    values1: {{ values1|safe }}
+                                                };
+                            </script>
+                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                            <script src="{% static 'myapp/js_files/chart1.js' %}"></script>
+                        </div>    
+                    </div>
+                     <!--Card2-->
+                    <div class="col-md-6">
+                        <div class="card dashboard-card p-3">
+                            <div>
+                                <canvas id="DoughnutChart" width="400" height="200"></canvas>
+                            </div>
+                            <script>
+                                const charData3 = {
+                                                type: 'doughnut',
+                                                labels3: {{ labels3|safe }},
+                                                values3: {{ values3|safe }}
+                                                };
+                            </script>
+                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                            <script src="{% static 'myapp/js_files/chart1.js' %}"></script>
+                        </div>    
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="card dashboard-card p-3">
+                            <div >
+                                <canvas id="BarChart" width="400" height="200"></canvas>
+                            </div>
+                            <script>
+                                const chartData2 = {
+                                                    labels2: {{ labels2|safe }},
+                                                    values2: {{ values2|safe }}
+                                                };
+                            </script>
+                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                            <script src="{% static 'myapp/js_files/chart1.js' %}"></script>
+                        </div>
+                    </div>    
+                    <div class="col-md-6">
+                        <div class="card dashboard-card p-3">
+                            <div >
+                                <canvas id="BarChart2" width="400" height="200"></canvas>
+                            </div>
+                            <script>
+                                const chartData4 = {
+                                                    labels4: {{ labels4|safe }},
+                                                    values4: {{ values4|safe }}
+                                                };
+                            </script>
+                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                            <script src="{% static 'myapp/js_files/chart1.js' %}"></script>
+                        </div>
+                    </div>    
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="card dashboard-card p-3">
+                            <div >
+                                <canvas id="LineChart" width="400" height="200"></canvas>
+                            </div>
+                            <script>
+                                const chartData5 = {
+                                                    labels5: {{ labels5|safe }},
+                                                    values5: {{ values5|safe }}
+                                                };
+                            </script>
+                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                            <script src="{% static 'myapp/js_files/chart1.js' %}"></script>
+                        </div>
+                    </div>    
+                    <div class="col-md-6">
+                        <div class="card dashboard-card p-3">
+                            <div>
+                                <canvas id="PestleImpactPolarChart" width="400" height="200"></canvas>
+                            </div>
+                            <!-- Define chart data -->
+                            <script>
+                                const polarchartData = {
+                                labels6: {{ labels6|safe }},  // Pestle categories
+                                values6: {{ values6|safe }}   // Impact values
+                                    };
+                            </script>
+                            <!-- Include Chart.js -->
+                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                            <!-- Include the custom script -->
+                            <script src="{% static 'myapp/js_files/pestle_impact_chart.js' %}"></script>
+                        </div> 
+                    </div>
+                </div>  
+            </div>              
+{% endblock %}
